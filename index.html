@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CN5201 Tutorial 5 | Dijkstra Shortest Path Calculater</title>
+
+        <link rel="stylesheet" href="ui_assets/bootstrap.min.css">
+    </head>
+
+    <body class="pt-5 bg-light">
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <b>Dijkstra Shortest Path Calculater</b>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div id="inputFileContainer" class="col-md-8 my-3">
+                                    <div>
+                                        <label class="form-label w-100">
+                                            Input File
+                                            <input id="inputFile" type='file' class="form-control text-center mt-3" accept='text/plain' onchange='openFile(event)'>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 my-3">
+                                    <div>
+                                        <label class="form-label w-100">
+                                            Starting Node
+                                            <input type="text" class="form-control text-center mt-3" id="starting_node" onkeypress="return /[a-z]/i.test(event.key)" required>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <hr>
+                                <button type="button" onclick="calculateShortestPath()" class="btn btn-primary btn-block">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="result" class="card py-0 mt-4 text-left" style="display: none">
+                        <div id="result-table-row" class="row">
+                            <div class="table-responsive">                                
+                                <table class="table text-center table-hover table-striped table-bordered bg-white mb-0">
+                                    <thead>
+                                        <tr class="text-center table-success">
+                                            <th colspan="3">
+                                                Shortest routes from node (<span id="starting_node_label"></span>)
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Destination</th>
+                                            <th scope="col">Cost</th>
+                                            <th scope="col">Next Node</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="result-table-body">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="error" class="alert alert-danger mt-4 text-left" style="display: none">
+                        <div id="error-row" class="row">
+                        </div>
+                    </div>                    
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="display"></id>
+
+        <script>let graph = []</script>
+        <script src="ui_assets/popper.min.js"></script>
+        <script src="ui_assets/bootstrap.min.js"></script>
+        <script src="file_handler.js"></script>
+        <script src="dijkstra.js"></script>
+    </body>
+
+</html>
