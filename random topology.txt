@@ -5,7 +5,7 @@ B F 2
 B G 2
 C B 1
 C E 1
-C D1
+C D 1
 E G 1
 E H 3
 F H 1
